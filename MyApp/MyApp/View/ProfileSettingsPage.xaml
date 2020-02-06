@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.View.ProfileSettingsPage"
+             xmlns:Custom="clr-namespace:MyApp.Custom">
+    
+    <ContentPage.Content>
+
+        <Grid>
+
+            <!-- Dzielenie na wiersze -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header Background row=0 -->
+            <Image x:Name="BannerImage" 
+                   Source="https://i.imgur.com/mZoBv9B.png"
+                   Aspect="AspectFill"/>
+
+            <!-- Profile Image -->
+            <Custom:AppImage x:Name="ProfileImage" 
+                    Source="https://i.imgur.com/Sf0CC9f.jpg"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Aspect="AspectFill"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    BorderColor="White"
+                    BorderThickness="3"
+                    TranslationY="50">
+            </Custom:AppImage>
+
+        
+            <!-- Followers numbers -->
+            <StackLayout Grid.Row="1" Padding="0,10,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0"
+                            Grid.Row="0"
+                            Text="1M"
+                            FontSize="Medium"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="0"
+                            Grid.Row="1"
+                            Text="Obserwujacych"
+                            FontSize="Small"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"/>
+
+                    <Label Grid.Column="2"
+                            Grid.Row="0" 
+                            Text="0" 
+                            FontSize="Medium"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="2" 
+                            Grid.Row="1" 
+                            Text="Aktywnosci"
+                            FontSize="Small"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"/>
+                </Grid>
+            </StackLayout>
+
+
+            <!-- Profile Name -->
+            <StackLayout Grid.Row="2" Padding="0,10,0,0">
+                <Custom:AppEntry x:Name="Username" 
+                    Text="Bazilla11"
+                    FontSize="Small"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    EndColor="White"
+                    StartColor="White"
+                    BorderColor="White"
+                    BorderRadius="4"
+                    BorderWidth="5"
+                    HeightRequest="35"
+                    WidthRequest="200"/>
+            </StackLayout>
+
+            <!-- Social Media Add -->
+            <StackLayout Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Social Media Icons -->
+                    <Custom:AppImage Source="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-512.png"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFill"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            BorderColor="White"
+                            BorderThickness="1"
+                            IsVisible="True"
+                            TranslationX="10"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                    </Custom:AppImage>
+                        
+                    <Custom:AppImage Source="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-new-circle-512.png"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFill"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            BorderColor="White"
+                            BorderThickness="1"
+                            IsVisible="True"
+                            TranslationX="10"
+                            Grid.Column="0"
+                            Grid.Row="1">
+                    </Custom:AppImage>
+
+                    <Custom:AppImage Source="https://icons-for-free.com/free-icons/png/512/1632538.png"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFill"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            BorderColor="White"
+                            BorderThickness="1"
+                            IsVisible="True"
+                            TranslationX="10"
+                            Grid.Column="0"
+                            Grid.Row="2">
+                    </Custom:AppImage>
+
+                    <Custom:AppImage Source="https://cdn0.iconfinder.com/data/icons/material-circle-apps/512/icon-twitter-material-design-512.png"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFill"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            BorderColor="White"
+                            BorderThickness="1"
+                            IsVisible="True"
+                            TranslationX="10"
+                            Grid.Column="0"
+                            Grid.Row="3">
+                    </Custom:AppImage>
+
+                    <Custom:AppImage Source="https://i.pinimg.com/originals/34/50/9a/34509a05557bf30853af477a83b7c7bb.png"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFill"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            BorderColor="White"
+                            BorderThickness="1"
+                            IsVisible="True"
+                            TranslationX="10"
+                            Grid.Column="0"
+                            Grid.Row="4">
+                    </Custom:AppImage>
+
+                    <!-- Label For Links -->
+                    <Custom:AppEntry x:Name="FbLabel"
+                        Text="Type your Facebook page"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        FontSize="Micro"
+                        HorizontalTextAlignment="Center"
+                        EndColor="#e6e6e6"
+                        StartColor="#f2f2f2">
+                    </Custom:AppEntry>
+
+                    <Custom:AppEntry x:Name="IgLabel"
+                        Text="Type your Instagram account"
+                        Grid.Column="2"
+                        Grid.Row="1"
+                        FontSize="Micro"
+                        HorizontalTextAlignment="Center"
+                        EndColor="#e6e6e6"
+                        StartColor="#f2f2f2">
+                    </Custom:AppEntry>
+
+                    <Custom:AppEntry x:Name="YtLabel"
+                        Text="Type your Youtube chanel"
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        FontSize="Micro"
+                        HorizontalTextAlignment="Center"
+                        EndColor="#e6e6e6"
+                        StartColor="#f2f2f2">
+                    </Custom:AppEntry>
+
+                    <Custom:AppEntry x:Name="TwLabel"
+                        Text="Type your Twiiter page"
+                        Grid.Column="2"
+                        Grid.Row="3"
+                        FontSize="Micro"
+                        HorizontalTextAlignment="Center"
+                        EndColor="#e6e6e6"
+                        StartColor="#f2f2f2">
+                    </Custom:AppEntry>
+
+                    <Custom:AppEntry x:Name="TtLabel"
+                        Text="Type your TikTok account"
+                        Grid.Column="2"
+                        Grid.Row="4"
+                        FontSize="Micro"
+                        HorizontalTextAlignment="Center"
+                        EndColor="#e6e6e6"
+                        StartColor="#f2f2f2">
+                    </Custom:AppEntry>
+                        
+                </Grid>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="LightGray" Grid.Row="4"/>
+                
+            <Custom:AppButton x:Name="AcceptButton"
+                Text="Zapisz"
+                FontSize="Small"
+                TranslationY="405"
+                StartColor="White" 
+                EndColor="#f2f2f2" 
+                WidthRequest="100"
+                HeightRequest="30" 
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="Center"
+                Clicked="AcceptButton_Clicked"/>
+                
+            <!-- Change Images Buttons -->
+            <StackLayout  Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Custom:AppButton x:Name="ChangeBannerButton"
+                            Grid.Column="4"
+                            Text="Edytuj"
+                            FontSize="Micro"
+                            StartColor="White" 
+                            EndColor="#f2f2f2" 
+                            WidthRequest="150"
+                            HeightRequest="30"
+                            HorizontalOptions="Center"
+                            Clicked="ChangeBannerButton_Clicked"/>
+
+                    <Custom:AppButton x:Name="ChangeProfileButton"
+                            Grid.Column="2"
+                            Text="Edytuj"
+                            FontSize="Micro"
+                            StartColor="White" 
+                            EndColor="#f2f2f2" 
+                            WidthRequest="150"
+                            HeightRequest="30"
+                            HorizontalOptions="Center"
+                            Clicked="ChangeProfileButton_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

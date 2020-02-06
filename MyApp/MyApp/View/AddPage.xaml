@@ -1,0 +1,58 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.View.AddPage"
+             xmlns:Custom="clr-namespace:MyApp.Custom"
+             BackgroundColor="#d9d9d9">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Custom:AppImage Source="http://www.clker.com/cliparts/K/G/i/6/Z/T/red-plus-hi.png"
+                          Grid.Column="0"
+                          HorizontalOptions="Center"
+                          VerticalOptions="End"
+                          Aspect="AspectFill"
+                          WidthRequest="80"
+                          HeightRequest="80"
+                          BorderColor="Transparent"
+                          BorderThickness="2">
+                    </Custom:AppImage>
+
+                    <Custom:AppImage Source="http://www.clker.com/cliparts/q/t/t/u/G/j/plus-hi.png"
+                          Grid.Column="1"
+                          HorizontalOptions="Center"
+                          VerticalOptions="End"
+                          Aspect="AspectFill"
+                          WidthRequest="80"
+                          HeightRequest="80"
+                          BorderColor="Transparent"
+                          BorderThickness="2">
+                    </Custom:AppImage>
+
+                    <Custom:AppImage Source="https://openclipart.org/image/2400px/svg_to_png/171070/tasto-2-architetto-franc-01-black-border.png"
+                          Grid.Column="2"
+                          HorizontalOptions="Center"
+                          VerticalOptions="End"
+                          Aspect="AspectFill"
+                          WidthRequest="80"
+                          HeightRequest="80"
+                          BorderColor="Transparent"
+                          BorderThickness="2">
+                    </Custom:AppImage>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

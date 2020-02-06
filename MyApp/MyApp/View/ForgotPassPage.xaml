@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.View.ForgotPassPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="LabelEmail"
+                   Text="Wpisz adres emqail i tam inne pierdoly"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Entry x:Name="Email" />
+
+            <Button x:Name="SendEmail"
+                    Text="Wyslij"
+                    Clicked="SendEmail_Clicked"/>
+
+            <Label x:Name="LabelVerifyCode" 
+                   Text="Wpisz kod i gitarka"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Entry x:Name="VerificationCode" />
+
+            <Button x:Name="VerifyCode"
+                    Text="Zweryfikuj kod"
+                    Clicked="VerifyCode_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

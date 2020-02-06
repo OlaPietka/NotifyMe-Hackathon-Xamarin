@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.View.SourcePage"
+             xmlns:Custom="clr-namespace:MyApp.Custom">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text ="Item 2"  
+              Priority="1" Order="Secondary" />
+        <ToolbarItem Text ="Item 2"  
+              Priority="0" Order="Secondary" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+
+            
+
+            <Custom:AppButton x:Name="ChangeProfileButton"
+                            Text="Zmień tło"
+                            FontSize="Micro"
+                            TranslationY="125"
+                            StartColor="Red" 
+                            EndColor="#f2f2f2" 
+                            HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

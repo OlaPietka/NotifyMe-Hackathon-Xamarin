@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MyApp.View.SignUpPage"
+            xmlns:Behaviors ="clr-namespace:MyApp.Validation"
+            xmlns:Custom="clr-namespace:MyApp.Custom"
+            xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+        <Style x:Key="RegisterEntry" TargetType="Custom:AppEntry">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="BorderColor" Value="#eaeaea" />
+            <Setter Property="BorderWidth" Value="3" />
+            <Setter Property="BorderRadius" Value="6" />
+            <Setter Property="StartColor" Value="#f6f6f6" />
+            <Setter Property="EndColor" Value="#f2f2f2" />
+            <Setter Property="Keyboard" Value="Default"/>
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="IsSpellCheckEnabled" Value="false" />
+            <Setter Property="IsTextPredictionEnabled" Value="false" />
+            <Setter Property="HeightRequest" Value="34" />
+        </Style>
+        <Style x:Key="NotificationLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="6"/>
+            <Setter Property="TextColor" Value="Red" />
+            <Setter Property="WidthRequest" Value="130"/>
+        </Style>
+        <Style x:Key="TextLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="8"/>
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="WidthRequest" Value="130"/>
+        </Style>
+        </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="20, 40, 20, 20" />
+      <On Platform="Android, UWP" Value="20" />
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <ContentPage.Content>
+    <ScrollView>
+    <Grid>
+      <!-- Dzielenie na wiersze -->
+      <Grid.RowDefinitions>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <!-- Dzielenie na kolumny -->
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="140"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+
+      <StackLayout Spacing="1" Grid.Row="0" Grid.Column="1">
+        <!-- Text Username -->
+        <Label x:Name="TextUsername"
+               Style="{StaticResource TextLabel}"
+               Text="Nazwa Użytkownika:"/>
+          
+        <iconize:IconImage Icon="fa-user"/>    
+            
+        <!-- Custom Username Entry -->
+        <Custom:AppEntry x:Name="Username"
+                         Style="{StaticResource RegisterEntry}"
+                         MaxLength="16">
+          <Entry.Behaviors>
+            <Behaviors:UsernameValidation/>
+          </Entry.Behaviors>
+        </Custom:AppEntry>
+
+        <!-- Error Notification Username -->
+        <Label x:Name="LabelUsername"
+               Style="{StaticResource NotificationLabel}"/>
+      </StackLayout>
+
+      <StackLayout Spacing="1" Grid.Row="1" Grid.Column="1">
+        <!-- Text Email -->
+        <Label x:Name="TextEmail"
+               Style="{StaticResource TextLabel}"
+               Text="E-mail:"/>
+
+        <!-- Custom Email Entry -->
+        <Custom:AppEntry x:Name="Email"
+                         Style="{StaticResource RegisterEntry}"
+                         MaxLength="16">
+          <Custom:AppEntry.Behaviors>
+            <Behaviors:EmailValidation/>
+          </Custom:AppEntry.Behaviors>
+        </Custom:AppEntry>
+
+        <!-- Error Notification Email -->
+        <Label x:Name="LabelEmail"
+               Style="{StaticResource NotificationLabel}"/>
+      </StackLayout>
+
+      <StackLayout Spacing="1" Grid.Row="2" Grid.Column="1">
+        <!-- Text Password -->
+        <Label x:Name="TextPassword"
+               Style="{StaticResource TextLabel}"
+               Text="Hasło:"/>
+
+        <!-- Custom Password Entry -->
+        <Custom:AppEntry x:Name="Password"
+                         Style="{StaticResource RegisterEntry}"
+                         IsPassword="true">
+          <Custom:AppEntry.Behaviors>
+            <Behaviors:PasswordValidation/>
+          </Custom:AppEntry.Behaviors>
+        </Custom:AppEntry>
+
+        <!-- Error Notification Password -->
+        <Label x:Name="LabelPassword"
+               Style="{StaticResource NotificationLabel}"/>
+      </StackLayout>
+
+      <StackLayout Spacing="1" Grid.Row="3" Grid.Column="1">
+        <!-- Text Repeat Password -->
+        <Label x:Name="TextRepeatPassword"
+               Style="{StaticResource TextLabel}"
+               Text="Powtórz hasło:"/>
+
+        <!-- Custom Repeat Password Entry -->
+        <Custom:AppEntry x:Name="RepeatPassword"
+                         Style="{StaticResource RegisterEntry}"
+                         MaxLength="32"
+                         IsPassword="true"/>
+
+        <!-- Error Notification Repeat Password -->
+        <Label x:Name="LabelRepeatPassword"
+               Style="{StaticResource NotificationLabel}"/>
+      </StackLayout>
+
+      <StackLayout Spacing="1"  Grid.Row="4" Grid.Column="1">
+        <!-- Text Date Picker -->
+        <Label x:Name="TextDatePicker"
+               Style="{StaticResource TextLabel}"
+               Text="Data urodzenia:"/>
+
+        <!-- DatePicker -->
+        <Custom:AppDatePicker x:Name="DatePicker"
+                    FontSize = "10"
+                    MaximumDate="01/30/2019"
+                    DateSelected="Date_Selected"
+                    BorderRadius="6"
+                    BorderColor="#eaeaea"
+                    BorderWidth="3"
+                    WidthRequest="140"
+                    HeightRequest="34"
+                    StartColor = "#f6f6f6"
+                    EndColor = "#f2f2f2"/>
+
+        <!-- Error Notification DatePicker -->
+        <Label x:Name="LabelDatePicker"
+               Style="{StaticResource NotificationLabel}"/>
+      </StackLayout>
+
+      <StackLayout Spacing="1" Grid.Row="5" Grid.Column="1">
+        <!-- SignUp Button -->
+        <Custom:AppButton x:Name="SignUpButton"
+                Text="Zarejestruj się"
+                TextColor="White"
+                FontSize = "12"
+                Clicked="Button_SignUp_Clicked"
+                WidthRequest="140"
+                HeightRequest="34"
+                FixedBorderRadius="20"
+                StartColor = "#ffbc56"
+                EndColor = "#ffa823"/> 
+      </StackLayout>
+    </Grid>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Custom:AppTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MyApp.View.NavigationBar"
+            xmlns:local="clr-namespace:MyApp.View"
+            xmlns:Custom="clr-namespace:MyApp.Custom"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.BarItemColor="#000000"
+            android:TabbedPage.BarSelectedItemColor="#000000"
+            BarTextColor="White">
+
+    <NavigationPage Icon="ic_search">
+        <x:Arguments>
+            <local:SearchPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Icon="ic_add">
+        <x:Arguments>
+            <local:AddPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Icon="ic_home">
+        <x:Arguments>
+            <local:SourcePage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Icon="ic_notification">
+        <x:Arguments>
+            <local:NotificationPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Icon="ic_profile">
+        <x:Arguments>
+            <local:MyAccountPage />
+        </x:Arguments>
+    </NavigationPage>
+</Custom:AppTabbedPage>
